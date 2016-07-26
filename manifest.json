@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+  "name": "EatClub: Veggie Dish Filter",
+  "version": "1.0.1",
+  "description": "Changes filenames in Differential into sticky headers.",
+  "content_scripts": [
+    {
+      "exclude_globs": [],
+      "exclude_matches": [],
+      "include_globs": [],
+      "js": [
+        "filter-vegetarian.user.js"
+      ],
+      "matches": [
+        "https://www.eatclub.com/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
