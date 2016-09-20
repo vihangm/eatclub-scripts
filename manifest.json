@@ -1,7 +1,7 @@
 {
   "manifest_version": 2,
   "name": "EatClub: Veggie Dish Filter",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Changes filenames in Differential into sticky headers.",
   "content_scripts": [
     {
