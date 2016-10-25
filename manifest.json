@@ -1,20 +1,35 @@
 {
+  "name": "EatClub: Dish Filter",
+  "version": "2.0.0",
   "manifest_version": 2,
-  "name": "EatClub: Veggie Dish Filter",
-  "version": "1.0.2",
-  "description": "Changes filenames in Differential into sticky headers.",
+  "description": "Lets you filter EatClub dishes by categories",
+  "homepage_url": "https://github.com/vihangm/eatclub-scripts",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "background": {
+    "scripts": ["src/background/event-page.js"],
+    "persistent": false
+  },
   "content_scripts": [
     {
-      "exclude_globs": [],
-      "exclude_matches": [],
-      "include_globs": [],
-      "js": [
-        "filter-vegetarian.user.js"
-      ],
-      "matches": [
-        "https://www.eatclub.com/*"
-      ],
+      "matches": ["*://*.eatclub.com/*"],
+      "js": ["src/content-scripts/filter.js"],
       "run_at": "document_idle"
     }
+  ],
+  "page_action": {
+    "default_icon": {
+      "19": "icons/icon19.png",
+      "38": "icons/icon38.png"
+    },
+    "default_title": "Filter Dishes",
+    "default_popup": "src/page-action/popup.html"
+  },
+  "permissions": [
+    "storage",
+    "https://*.eatclub.com/"
   ]
 }
